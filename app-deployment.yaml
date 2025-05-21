@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anpr-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anpr-app
+  template:
+    metadata:
+      labels:
+        app: anpr-app
+    spec:
+      containers:
+        - name: anpr-app
+          image: asia-south1-docker.pkg.dev/future-champion-455517-i0/kafka-apps/anpr-app
+          env:
+            - name: KAFKA_BROKER
+              value: "kafka-service:9092"
+            - name: TOPIC
+              value: "video-stream"
+            - name: GROUP_ID
+              value: "video-consumer-group"
+            - name: POSTGRES_HOST
+              value: "postgres-service"
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_DB
+              value: anpr
+            - name: POSTGRES_USER
+              value: root
+            - name: POSTGRES_PASSWORD
+              value: "hello@123"
+            - name: EMAIL_USER
+              value: testingmukund@gmail.com
+            - name: EMAIL_PASSWORD
+              value: "hhgs vvan kphd wter"
+            - name: EMAIL_SERVER
+              value: smtp.gmail.com
+            - name: EMAIL_PORT
+              value: "587"
+          
