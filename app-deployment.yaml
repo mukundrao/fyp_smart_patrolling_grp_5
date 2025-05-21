@@ -27,15 +27,15 @@ spec:
             - name: POSTGRES_PORT
               value: "5432"
             - name: POSTGRES_DB
-              value: anpr
+              value: <DATABASE_NAME>
             - name: POSTGRES_USER
-              value: root
+              value: <USER>
             - name: POSTGRES_PASSWORD
-              value: "hello@123"
+              value: "<PASSWORD>"
             - name: EMAIL_USER
-              value: testingmukund@gmail.com
+              value: <SENDER_EMAIL_ID>
             - name: EMAIL_PASSWORD
-              value: "hhgs vvan kphd wter"
+              value: "<SENDER_EMAIL_PASSWORD>"
             - name: EMAIL_SERVER
               value: smtp.gmail.com
             - name: EMAIL_PORT
